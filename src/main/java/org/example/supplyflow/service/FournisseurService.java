@@ -13,11 +13,18 @@ public class FournisseurService {
     @Autowired
     private FournisseurRepository fournisseurRepository;
 
-//    public List<Fournisseur> findAllFournisseur(){
-//        return fournisseurRepository.findAll();
+    public List<Fournisseur> findAllFournisseur() {
+        return fournisseurRepository.findAll();}
 
-    public ArrayList<Fournisseur> findAllFournisseur(){
-        return (ArrayList<Fournisseur>)fournisseurRepository.findAll();
-
+//    public ArrayList<Fournisseur> findAllFournisseur(){
+//        return (ArrayList<Fournisseur>)fournisseurRepository.findAll();
+//
+//    }
+    public void AjouterFournisseur(Fournisseur fournisseur){
+        fournisseurRepository.save(fournisseur);
     }
+    public void deletFournisseur(int id){
+        fournisseurRepository.deleteById(id);
+    }
+
 }

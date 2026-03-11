@@ -6,5 +6,5 @@ import org.springframework.stereotype.Indexed;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FournisseurRepository extends JpaRepository <Fournisseur , Indexed> {
+public interface FournisseurRepository extends JpaRepository <Fournisseur , Integer> {
 }

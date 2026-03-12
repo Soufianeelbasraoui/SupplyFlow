@@ -52,3 +52,52 @@ body {
     margin-left: 250px;
     padding: 20px;
 }
+.contanier-add-produit{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+}
+.contanier-add-produit a{
+    background: blue;
+    color: white;
+    height: 25px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 15px 30px;
+    padding: 5px;
+}
+.btn{
+    background: mediumblue;
+    border: none;
+    border-radius:5px;
+    padding: 8px;
+    color: white;
+    width: 100px;
+}
+.btn:hover{
+    background: dodgerblue;
+}
+.btn-modifier{
+    background: #106f05;
+    padding: 4px;
+    color: #fff;
+    border-radius: 5px;
+}
+.btn-supprimer{
+    background: red;
+    padding: 4px;
+    color: #fff;
+    border-radius: 5px;
+}
+table tr th{
+    background: #eee ;
+    padding: 5px;
+}
+table tr td{
+    padding: 6px;
+
+}
+a{
+    text-decoration: none;
+}

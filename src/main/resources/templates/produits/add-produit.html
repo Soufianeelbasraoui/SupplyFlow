@@ -12,6 +12,25 @@
 <div class="main-content">
     <h1>Ajouter Produit</h1>
 
+    <div class="add-form">
+        <form action="/produits/save" method="post">
+            <input type="text" name="nom" placeholder=" Nom Produit... ">
+            <input type="text" name="categorie" placeholder="Catégorie...">
+            <input type="number" name="prix" placeholder=" prix...">
+            <input type="number" name="quantite" placeholder="Quantite...">
+            <select name="id_fournisseur">
+                <option value="">choisire une fournisseur</option>
+                <option th:each="f: ${fournisseurs}"
+                        th:value="${f.id}"
+                        th:text="${f.nom}">
+                </option>
+            </select>
+            <button class="btn">Ajouter</button>
+
+        </form>
+
+    </div>
+
 </div>
 
 </body>

@@ -9,12 +9,13 @@
 <div th:replace="header/header :: headerFragment"></div>
 
 <div class="main-content">
-    <h1>Liste des Produits</h1>
-    <a href="/produits/new">Ajouter Produit</a>
+    <div class="contanier-add-produit">
+        <h1>Liste des Produits</h1>
+        <a href="/produits/new" >Ajouter Produit</a>
+    </div>
 
-    <table border="1">
-
-        <tr>
+    <table border="1" style="border-collapse: collapse; width: 100%">
+        <tr >
             <th>ID</th>
             <th>Nom</th>
             <th>Catégorie</th>
@@ -30,10 +31,10 @@
             <td th:text="${p.prix}"></td>
             <td th:text="${p.quantite}"></td>
 
-            <td>
-                <a th:href="@{/produits/edit/{id}(id=${p.id})}">Modifier</a>
+            <td style="text-align: center;">
+                <a href="edit-produit" class="btn-modifier">Modifier</a>
                 |
-                <a th:href="@{/produits/delete/{id}(id=${p.id})}">Supprimer</a>
+                <a href="" class="btn-supprimer">Supprimer</a>
             </td>
         </tr>
     </table>

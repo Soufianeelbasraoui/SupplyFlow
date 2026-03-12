@@ -11,12 +11,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/produits")
 public class ProduitController {
 
-    private  ProduitService produitService;
+    private ProduitService produitService;
     private FournisseurService fournisseurService;
 
 
-
-    public ProduitController(ProduitService produitService,FournisseurService fournisseurService) {
+    public ProduitController(ProduitService produitService, FournisseurService fournisseurService) {
         this.produitService = produitService;
         this.fournisseurService = fournisseurService;
     }
@@ -26,11 +25,20 @@ public class ProduitController {
         model.addAttribute("produits", produitService.getAllProduits());
         return "produits/list-produits";
     }
-    @GetMapping ("/new")
-    public String addProduct(Model model){
-        model.addAttribute("produit",new Produit());
-        model.addAttribute("fournisseurs",fournisseurService.findAllFournisseur());
+
+    @GetMapping("/new")
+    public String addProduct(Model model) {
+        model.addAttribute("produit", new Produit());
+        model.addAttribute("fournisseurs", fournisseurService.findAllFournisseur());
         return "produits/add-produit";
     }
 
+    @PostMapping("/save")
+    public String saveProduit(@ModelAttribute Produit produit, @RequestParam("id_fournisseur") int idFournisseur) {
+        produit.setFournisseur(fournisseurService.findById(idFournisseur));
+        produitService.saveProduit(produit);
+        return "redirect:/produits";
+    }
 }
+
+

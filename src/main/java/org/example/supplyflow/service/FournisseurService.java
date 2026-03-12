@@ -23,6 +23,9 @@ public class FournisseurService {
     public void AjouterFournisseur(Fournisseur fournisseur){
         fournisseurRepository.save(fournisseur);
     }
+    public Fournisseur findById(int id){
+       return fournisseurRepository.findById(id).orElse(null);
+    }
     public void deletFournisseur(int id){
         fournisseurRepository.deleteById(id);
     }

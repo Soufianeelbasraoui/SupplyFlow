@@ -32,13 +32,28 @@ public class ProduitController {
         model.addAttribute("fournisseurs", fournisseurService.findAllFournisseur());
         return "produits/add-produit";
     }
-
     @PostMapping("/save")
     public String saveProduit(@ModelAttribute Produit produit, @RequestParam("id_fournisseur") int idFournisseur) {
         produit.setFournisseur(fournisseurService.findById(idFournisseur));
         produitService.saveProduit(produit);
         return "redirect:/produits";
+
     }
+    @GetMapping("/edit/{id}")
+    public String editProduit(@PathVariable int id, Model model) {
+        Produit produit = produitService.getProduitByID(id);
+        model.addAttribute("produit", produit);
+        model.addAttribute("fournisseurs", fournisseurService.findAllFournisseur());
+        return "produits/edit-produit";
+    }
+
+
+    @GetMapping("/delete/{id}")
+    public String deleteProduit(@PathVariable int id) {
+        produitService.deleteProduit(id);
+        return "redirect:/produits";
+    }
+
 }
 
 

@@ -32,9 +32,11 @@
             <td th:text="${p.quantite}"></td>
 
             <td style="text-align: center;">
-                <a href="edit-produit" class="btn-modifier">Modifier</a>
+                <a th:href="@{/produits/edit/{id}(id=${p.id})}" class="btn-modifier">Modifier</a>
                 |
-                <a href="" class="btn-supprimer">Supprimer</a>
+                <a th:href="@{/produits/delete/{id}(id=${p.id})}" class="btn-supprimer">
+                    Supprimer
+                </a>
             </td>
         </tr>
     </table>

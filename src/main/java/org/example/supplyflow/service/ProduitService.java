@@ -4,9 +4,11 @@ import org.example.supplyflow.model.Produit;
 import org.example.supplyflow.repository.ProduitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class ProduitService {
 
     @Autowired
@@ -21,7 +23,10 @@ public class ProduitService {
     }
 
     public void deleteProduit(int id) {
-        produitRepository.deleteById(id);
+        Produit produit = produitRepository.findById(id).orElse(null);
+        if (produit != null) {
+            produitRepository.delete(produit);
+        }
     }
 
     public Produit getProduitByID(int id) {

@@ -101,3 +101,13 @@ table tr td{
 a{
     text-decoration: none;
 }
+.main-dashbord{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    gap: 50px;
+}
+.card-item{
+    border: 1px solid;
+height: 150px;
+}

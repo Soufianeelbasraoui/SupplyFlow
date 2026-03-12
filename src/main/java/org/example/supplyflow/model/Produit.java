@@ -25,8 +25,8 @@ public class Produit {
     @JoinColumn(name = "id_fournisseur",nullable = false)
     private Fournisseur fournisseur;
 
-    @OneToMany(mappedBy = "produit",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    private List<MouvementStock> mouvementStocks=new ArrayList<>();
+    @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL)
+    private List<MouvementStock> mouvementStocks = new ArrayList<>();
 
     public int getId() {
         return id;

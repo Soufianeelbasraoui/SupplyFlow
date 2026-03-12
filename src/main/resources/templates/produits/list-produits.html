@@ -2,41 +2,42 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Produits</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <body>
+<div th:replace="header/header :: headerFragment"></div>
 
-<h1>Liste des Produits</h1>
+<div class="main-content">
+    <h1>Liste des Produits</h1>
 
-<a href="/produits/new">Ajouter Produit</a>
+    <a href="/produits/new">Ajouter Produit</a>
 
-<table border="1">
+    <table border="1">
 
-    <tr>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Catégorie</th>
-        <th>Prix</th>
-        <th>Quantité</th>
-        <th>Actions</th>
-    </tr>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Catégorie</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Actions</th>
+        </tr>
 
-    <tr th:each="p : ${produits}">
-        <td th:text="${p.id}"></td>
-        <td th:text="${p.nom}"></td>
-        <td th:text="${p.categorie}"></td>
-        <td th:text="${p.prix}"></td>
-        <td th:text="${p.quantite}"></td>
+        <tr th:each="p : ${produits}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.nom}"></td>
+            <td th:text="${p.categorie}"></td>
+            <td th:text="${p.prix}"></td>
+            <td th:text="${p.quantite}"></td>
 
-        <td>
-            <a th:href="@{/produits/edit/{id}(id=${p.id})}">Modifier</a>
-            |
-            <a th:href="@{/produits/delete/{id}(id=${p.id})}">Supprimer</a>
-        </td>
-
-    </tr>
-
-</table>
-
+            <td>
+                <a th:href="@{/produits/edit/{id}(id=${p.id})}">Modifier</a>
+                |
+                <a th:href="@{/produits/delete/{id}(id=${p.id})}">Supprimer</a>
+            </td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

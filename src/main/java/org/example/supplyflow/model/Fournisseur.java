@@ -18,8 +18,8 @@ public class Fournisseur {
     @Column(name = "telephone",nullable = false)
     private String telephone;
 
-    @OneToMany(mappedBy = "fournisseur",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    private List<Produit> produits=new ArrayList<>();
+    @OneToMany(mappedBy = "fournisseur", cascade = CascadeType.ALL)
+    private List<Produit> produits = new ArrayList<>();
 
     public Fournisseur() {}
 

@@ -22,14 +22,16 @@ public class ProduitService {
         produitRepository.save(produit);
     }
 
-    public void deleteProduit(int id) {
-        Produit produit = produitRepository.findById(id).orElse(null);
-        if (produit != null) {
-            produitRepository.delete(produit);
-        }
-    }
 
     public Produit getProduitByID(int id) {
         return produitRepository.findById(id).orElse(null);
     }
+
+public void deleteProduitById(int id) {
+    Produit produit = produitRepository.findById(id).orElse(null);
+    if(produit != null){
+        produit.getMouvementStocks().clear();
+        produitRepository.delete(produit);
+    }
+}
 }

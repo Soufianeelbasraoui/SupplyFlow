@@ -27,6 +27,9 @@ body {
     font-weight: bold;
     color: #333;
 }
+.brand-title span{
+    color: orangered;
+}
 
 .saidbar-nave {
     display: flex;
@@ -109,7 +112,35 @@ a{
     gap: 20px;
 }
 .card-item{
-    border: 1px solid;
+
+    border-radius: 5px;
     padding: 30px;
     width: 100%;
+    background: #eb794f;
+    color: white;
+    font-weight: bold;
+}
+.card-item2{
+    border-radius: 5px;
+    padding: 20px;
+    width: 100%;
+    background: #57db47;
+    color: white;
+}
+.card-item1{
+    border-radius: 5px;
+    padding: 20px;
+    width: 100%;
+    background: blue;
+    color: white;
+}
+
+.teble-dashboord{
+    display: flex;
+   justify-content: flex-start;
+    gap: 30px;
+}
+.table1{
+    width: 100%;
+
 }

@@ -25,7 +25,7 @@ public class Produit {
     @JoinColumn(name = "id_fournisseur",nullable = false)
     private Fournisseur fournisseur;
 
-    @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MouvementStock> mouvementStocks = new ArrayList<>();
 
     public int getId() {

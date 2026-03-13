@@ -33,10 +33,15 @@
 
             <td style="text-align: center;">
                 <a th:href="@{/produits/edit/{id}(id=${p.id})}" class="btn-modifier">Modifier</a>
-                |
-                <a th:href="@{/produits/delete/{id}(id=${p.id})}" class="btn-supprimer">
-                    Supprimer
-                </a>
+<!--                <form th:action="@{/produits/delete/{id}(id=${p.id})}" method="post" style="display:inline">-->
+<!--                    <button type="submit" class="btn-supprimer" onclick="return confirm('Supprimer ce produit ?');">Supprimer</button>-->
+<!--                </form>-->
+                <form th:action="@{/produits/delete/{id}(id=${p.id})}" method="post" style="display:inline">
+                    <button type="submit" class="btn-supprimer" onclick="return confirm('Supprimer ce produit ?');">
+                        Supprimer
+                    </button>
+                </form>
+
             </td>
         </tr>
     </table>

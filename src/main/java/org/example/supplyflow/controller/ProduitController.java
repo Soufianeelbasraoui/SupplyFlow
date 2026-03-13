@@ -6,6 +6,8 @@ import org.example.supplyflow.service.ProduitService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 @RequestMapping("/produits")
@@ -47,10 +49,9 @@ public class ProduitController {
         return "produits/edit-produit";
     }
 
-
-    @GetMapping("/delete/{id}")
+    @PostMapping("/delete/{id}")
     public String deleteProduit(@PathVariable int id) {
-        produitService.deleteProduit(id);
+        produitService.deleteProduitById(id);
         return "redirect:/produits";
     }
 

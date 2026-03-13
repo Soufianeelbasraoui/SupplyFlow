@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>add-mouvement</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="header/header :: headerFragment"></div>
+<div class="main-content">
+    <h1>Ajouter Mouvement de Stock</h1>
+    <div class="add-form">
+
+        <form th:action="@{/mouvements/save}" method="post">
+            <select name="id_produit">
+                <option value="">Choisir Produit</option>
+                <option th:each="p : ${produits}"
+                        th:value="${p.id}"
+                        th:text="${p.nom}">
+                </option>
+            </select>
+            <select name="type">
+                <option value="ENTREE">Entrée</option>
+                <option value="SORTIE">Sortie</option>
+            </select>
+            <input type="number" name="quantite" placeholder="Quantité">
+            <button class="btn">Enregistrer</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

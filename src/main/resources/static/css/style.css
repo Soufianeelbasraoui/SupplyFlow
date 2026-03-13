@@ -103,11 +103,13 @@ a{
 }
 .main-dashbord{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-content: center;
-    gap: 50px;
+    margin: 20px;
+    gap: 20px;
 }
 .card-item{
     border: 1px solid;
-height: 150px;
+    padding: 30px;
+    width: 100%;
 }

@@ -10,8 +10,9 @@
 <div th:replace="header/header :: headerFragment"></div>
 
 <div class="main-content">
-    <h1>Modifier Produit</h1>
+
     <div class="add-form">
+        <h1>Modifier Produit</h1>
         <form action="/produits/save" method="post">
             <input type="hidden" name="id" th:value="${produit.id}">
             <input type="text" name="nom" placeholder=" Nom Produit... " th:value="${produit.nom}">

@@ -9,9 +9,9 @@
 
 <div th:replace="header/header :: headerFragment"></div>
 <div class="main-content">
-    <h1>Ajouter Mouvement de Stock</h1>
-    <div class="add-form">
 
+    <div class="add-form">
+        <h1>Ajouter Mouvement de Stock</h1>
         <form th:action="@{/mouvements/save}" method="post">
             <select name="id_produit">
                 <option value="">Choisir Produit</option>

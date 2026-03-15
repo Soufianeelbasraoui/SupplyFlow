@@ -10,8 +10,9 @@
 <div th:replace="header/header :: headerFragment"></div>
 
 <div class="main-content">
-    <h1>Ajouter Fournisseur</h1>
+
     <div class="add-form">
+        <h1>Ajouter Fournisseur</h1>
         <form th:action="@{/fournisseurs/save}" method="post">
             <input type="text" name="nom" placeholder="Nom fournisseurs...">
             <input type="text" name="telephone" placeholder="Telephone...">

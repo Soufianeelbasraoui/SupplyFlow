@@ -38,5 +38,6 @@ public class MouvementStockController {
     public String saveMouvements(@ModelAttribute MouvementStock mouvementStock, @RequestParam ("id_produit") int idproduit,@RequestParam int quantite,@RequestParam String type){
         mouvementStockService.saveMouvementStck(idproduit,quantite,type);
         return "redirect:/mouvements";
+
     }
 }

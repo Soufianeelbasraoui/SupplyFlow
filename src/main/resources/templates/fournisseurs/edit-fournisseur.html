@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier Produit</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="header/header :: headerFragment"></div>
+
+<div class="main-content">
+    <div class="add-form">
+        <h1>Modifier Produit</h1>
+        <form action="/fournisseurs/save" method="post">
+            <input type="hidden" name="id" th:value="${fournisseur.id}">
+            <input type="text" name="nom" placeholder=" Nom Fournisseur... " th:value="${fournisseur.nom}">
+            <input type="text" name="telephone" placeholder="telephone..." th:value="${fournisseur.telephone}">
+            <input type="text" name="ville" placeholder=" ville..." th:value="${fournisseur.ville}">
+            <button class="btn">Modifier</button>
+        </form>
+    </div>
+
+
+</div>
+
+</body>
+</html>

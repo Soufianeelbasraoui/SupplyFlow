@@ -34,13 +34,11 @@
             <td style="text-align: center;">
                 <a th:href="@{/produits/edit/{id}(id=${p.id})}" class="btn-modifier">Modifier</a>
 <!--                <form th:action="@{/produits/delete/{id}(id=${p.id})}" method="post" style="display:inline">-->
-<!--                    <button type="submit" class="btn-supprimer" onclick="return confirm('Supprimer ce produit ?');">Supprimer</button>-->
+<!--                    <button type="submit" class="btn-supprimer" onclick="return confirm('Supprimer ce produit ?');">-->
+<!--                        Supprimer-->
+<!--                    </button>-->
 <!--                </form>-->
-                <form th:action="@{/produits/delete/{id}(id=${p.id})}" method="post" style="display:inline">
-                    <button type="submit" class="btn-supprimer" onclick="return confirm('Supprimer ce produit ?');">
-                        Supprimer
-                    </button>
-                </form>
+                <a th:href="@{/produits/delete/{id}(id=${p.id})}"  onclick="return confirm('Supprimer ce fournisseur et tous ses produits ?');"  class="btn-supprimer" > Supprimer </a>
 
             </td>
         </tr>

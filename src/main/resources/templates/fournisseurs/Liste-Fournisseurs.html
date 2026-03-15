@@ -20,12 +20,19 @@
             <th>nom</th>
             <th>telephone</th>
             <th>ville</th>
+            <th>Action</th>
         </tr>
         <tr th:each="f:${fournisseurs}">
             <td th:text="${f.id}"></td>
             <td th:text="${f.nom}"></td>
             <td th:text="${f.telephone}"></td>
             <td th:text="${f.ville}"></td>
+            <td style="text-align: center;">
+                <a  th:href="@{/fournisseurs/edit/{id}(id=${f.id})}" class="btn-modifier">Modifier</a>
+                <a th:href="@{/fournisseurs/delete/{id}(id=${f.id})}" class="btn-supprimer"
+                   onclick="return confirm('Supprimer ce fournisseur et tous ses produits ?');">Supprimer
+                </a>
+            </td>
         </tr>
     </table>
 </div>

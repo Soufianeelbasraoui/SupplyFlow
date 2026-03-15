@@ -27,11 +27,14 @@ public class ProduitService {
         return produitRepository.findById(id).orElse(null);
     }
 
+//public void deleteProduitById(int id) {
+//    Produit produit = produitRepository.findById(id).orElse(null);
+//    if(produit != null){
+//        produit.getMouvementStocks().clear();
+//        produitRepository.delete(produit);
+//    }
+//}
 public void deleteProduitById(int id) {
-    Produit produit = produitRepository.findById(id).orElse(null);
-    if(produit != null){
-        produit.getMouvementStocks().clear();
-        produitRepository.delete(produit);
-    }
+   produitRepository.deleteById(id);
 }
 }

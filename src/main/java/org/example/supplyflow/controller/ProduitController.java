@@ -49,12 +49,16 @@ public class ProduitController {
         return "produits/edit-produit";
     }
 
-    @PostMapping("/delete/{id}")
-    public String deleteProduit(@PathVariable int id) {
-        produitService.deleteProduitById(id);
-        return "redirect:/produits";
-    }
-
+//    @PostMapping("/delete/{id}")
+//    public String deleteProduit(@PathVariable int id) {
+//        produitService.deleteProduitById(id);
+//        return "redirect:/produits";
+//    }
+@GetMapping("/delete/{id}")
+public String deleteProduit(@PathVariable("id") int id) {
+    produitService.deleteProduitById(id);
+    return "redirect:/produits";
+}
 }
 
 
